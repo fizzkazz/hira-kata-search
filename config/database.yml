@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: hira_kata_search_development
+  username: postgres
+  password: password
+  host: db
+
+test:
+  <<: *default
+  database: hira_kata_search_test
+
+production:
+  <<: *default
+  database: hira_kata_search_production
+  username: hira_kata_search
+  password: <%= ENV["HIRA_KATA_SEARCH_DATABASE_PASSWORD"] %>

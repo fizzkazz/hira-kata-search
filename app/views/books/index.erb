@@ -1,0 +1,27 @@
+<h1>Books</h1>
+
+<%= form_with(url: books_path, method: :get, local: true) do |form| %>
+    <%= form.label :search, "ふりがなで検索:" %>
+    <%= form.text_field :search %>
+    <%= form.submit "search" %>
+<% end %>
+
+<%= form_with(url: books_path, method: :get, local: true) do |form| %>
+    <%= form.submit "reset" %>
+<% end %>
+
+<table class="books-table">
+  <tr>
+    <th>Name</th>
+    <th>Kana</th>
+    <!-- 他の必要なフィールド -->
+  </tr>
+
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= book.name %></td>
+      <td><%= book.kana %></td>
+      <!-- 他のフィールドを表示 -->
+    </tr>
+  <% end %>
+</table>

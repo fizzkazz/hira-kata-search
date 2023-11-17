@@ -1,0 +1,13 @@
+.books-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.books-table, .books-table th, .books-table td {
+    border: 1px solid black;
+}
+
+.books-table th, .books-table td {
+    padding: 8px;
+    text-align: left;
+}
